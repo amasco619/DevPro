@@ -5,7 +5,7 @@ function Header() {
     return(
         <header className="App-header flex justify-between items-center">
             <span className="font-bold">
-                Available Items
+                Find Items
             </span>
             
             <Navigation />
