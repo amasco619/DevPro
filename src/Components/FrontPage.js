@@ -1,9 +1,9 @@
 import React from "react";
 
-function FrontPage() {
+function FrontPage(props) {
     return(
         <div>
-            <h1>This is just the Page</h1>
+            <h1>This is just the {props.name}</h1>
         </div>
     )
 }
