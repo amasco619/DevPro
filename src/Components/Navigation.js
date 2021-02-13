@@ -7,7 +7,9 @@ import NavMenu from "./NavMenu";
 function Navigation() {
     const [showMenu, setshowMenu] = useState(false)
 
-//Creating the transition for the menu-slide/mask(sidebar)    
+//Creating the transition for the menu-slide/mask(sidebar)
+//Animation from (https://www.react-spring.io/docs/hooks/use-transition)
+//npm add react-spring
     const maskTransitions = useTransition(showMenu, null, {
         from: { position: 'absolute', opacity: 0 },
         enter: { opacity: 1 },
