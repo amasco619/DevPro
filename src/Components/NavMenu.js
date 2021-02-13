@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function NavMenu(props) {
     return (
         <div>
-            <div className="font-black py-3">
+            <div className="text-gray-600 font-black py-3">
                 Category
             </div>
             <ul>

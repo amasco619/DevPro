@@ -1,30 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import axios from "axios";
+import React from 'react'
+import { useParams } from 'react-router-dom';
+import Loader from '../Components/Loader';
+import { useAxiosGet } from '../Hooks/HttpRequest';
 
 function Items() {
-    const url = 'https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/3'
-    const [Product, setProduct] = useState(null)
+//useParams will return the URL paramter and get the ID from it
+//(monitoring any changes) to make the output dynamic
+    const { id } = useParams()
+    const url = `https://5e9623dc5b19f10016b5e31f.mockapi.io/api/v1/products/${id}`
+    
+    let Product = useAxiosGet(url)
 
-    let content
+    let content = null
 
-//The hook takes a function of code to run.
-//Second, a variiable to monitor for any change to rerun the function code
-    useEffect(() => {
-        axios.get(url).then(Response => {setProduct(Response.data)})
-    }, [url])
+    if (Product.error) {
+        content = <p>There was an ERROR. Try again</p>
+    }
 
-    if (Product) {
+    if (Product.loading){
+        content = <Loader />
+    }
+
+    if (Product.data) {
             content = 
             <div>
-                <h1 className="text-2xl font-bold mb-3">{Product.name}</h1> 
+                <h1 className="text-2xl font-bold mb-3">{Product.data.name}</h1> 
                 <div>
-                    <img src={Product.images[0].imageUrl} alt={Product.name} />
+                    <img src={Product.data.images[0].imageUrl} alt={Product.name} />
                 </div>
                 <div className="font-bold text-xl mb-3">
-                    $ {Product.price}
+                    $ {Product.data.price}
                 </div>
                 <div>
-                    {Product.description}
+                    {Product.data.description}
                 </div>
             </div>
     }

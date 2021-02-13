@@ -3,18 +3,19 @@ import {
   BrowserRouter as Router, 
   Switch, Route } from "react-router-dom";
 import Footer from './Components/Footer';
-import FrontPage from "./Components/FrontPage";
 import Header from './Components/Header';
 import Home from './Views/Home';
 import About from './Views/About';
+import Items from './Views/Items';
 
 function App() {
   return (
-    <div>
+    <div className="relative pb-10 min-h-screen">
       <Router>
         
         <Header />
-{/*Creating page/content that matches the path*/}
+{/*Creating page/content that matches the path
+  npm add react-router-dom*/}
         <div className="p-3">
         <Switch>
           <Route exact path="/">
@@ -22,7 +23,11 @@ function App() {
           </Route>
 
           <Route path="/about">
-            <About/>
+            <About />
+          </Route>
+
+          <Route path="/items/:id">
+            <Items />
           </Route>
         </Switch>
         </div>
