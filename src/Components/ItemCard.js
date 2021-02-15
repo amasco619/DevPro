@@ -22,7 +22,7 @@ function ItemCard(props) {
                 <div className="mb-3">
                     {props.product.description}
                 </div>
-                <Link to={`/items/${props.product.id}`} className="bg-gray-500 text-white p-2 flex justify-center w-3/12">
+                <Link to={`/items/${props.product.id}`} className="bg-gray-500 text-white p-2 flex justify-center w-full">
                     View
                 </Link>
             </div>
