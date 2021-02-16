@@ -20,7 +20,7 @@ function Home() {
     }
 
     if (Products.data) {
-//To loop through an ARRAY, we use var.data.map
+//To loop through an ARRAY, we use variable.data.map
 /*This (.map) accepts 2 arguments: 
 the singular name for the Data being looped through and Key(Index of the item)*/
         content = 
