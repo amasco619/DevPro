@@ -15,6 +15,11 @@ function NavMenu(props) {
                         onClick={props.closeMenu}>Home</Link>
                 </li>
                 <li>
+                    <Link to="/request" 
+                        className="text-gray-500 py-3 border-b block"
+                        onClick={props.closeMenu}>iWant</Link>
+                </li>
+                <li>
                     <Link to="/about" 
                         className="text-gray-500 py-3 border-b block"
                         onClick={props.closeMenu}>About</Link>

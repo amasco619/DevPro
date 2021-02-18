@@ -7,6 +7,7 @@ import Header from './Components/Header';
 import Home from './Views/Home';
 import About from './Views/About';
 import Items from './Views/Items';
+import Request from './Views/Request';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
 
           <Route path="/items/:id">
             <Items />
+          </Route>
+
+          <Route path="/request">
+            <Request />
           </Route>
         </Switch>
         </div>
