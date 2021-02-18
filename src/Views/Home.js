@@ -42,10 +42,10 @@ the singular name for the Data being looped through and Key(Index of the item)*/
         <div>
             <header className="flex justify-between items-center mb-3">
                 <h1 className="font-bold text-2xl">
-                    Available Items
+                    weGet
                 </h1>
                 <input
-                    className="w-72 pl-2 border rounded overflow-hidden"
+                    className="pl-2 border rounded overflow-hidden"
                     type="text"
                     placeholder="Search..."
                     onChange={(event) => {
