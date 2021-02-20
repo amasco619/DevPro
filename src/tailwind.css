@@ -29222,6 +29222,33 @@ video {
   }
 }
 
+.form-container {
+  width: 360px;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  margin: 5px 0 5px 0;
+  padding: 7px;
+  font-size: 16px;
+  border: 0;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -172091,4 +172118,3 @@ video {
     animation: bounce 1s infinite;
   }
 }
-  
