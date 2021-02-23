@@ -17,6 +17,9 @@ function Request() {
             number: '',
         })
     }
+    const deleteItem = (id, items, setItems) => {
+        setItems(items.filter(item => item.id !== id))
+    }
     const [items, setItems] = useState([
         {
             id: 1,
@@ -64,7 +67,7 @@ function Request() {
                 </button>
             </form>
             {items.map(item => (
-                <Forms name={item.name} title={item.title} number={item.number} />
+                <Forms id={item.id} name={item.name} title={item.title} number={item.number} deleteItem={(id) => deleteItem(id, items, setItems)} />
             ))}
         </div>
     )

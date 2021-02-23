@@ -2,8 +2,11 @@ import React from 'react'
 
 function Forms(props) {
     return (
-        <div className="mt-7">
+        <div className="mt-7 form-container">
             <p>My name is {props.name} and I want {props.title}. Call me at {props.number}</p>
+            <div>
+                <button onClick={() => props.deleteItem(props.id)}>Delete</button>
+            </div>
         </div>
     )
 }
