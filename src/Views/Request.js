@@ -1,43 +1,71 @@
-import React from 'react'
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react'
+import Forms from './Extra/Forms'
 
 function Request() {
-    const { register, handleSubmit, errors } = useForm()
-
-    const onSubmit = (evt, e) => {
-        console.log(evt)
-        e.target.reset()
+    const handleSubmit = (e, items, setItems, input, setInput) => {
+        e.preventDefault();
+        const id = (items.length) ? items[items.length - 1].id + 1 : 0
+        setItems([...items, {
+            id: id,
+            name: input.name,
+            title: input.title,
+            number: input.number,
+        }])
+        setInput({
+            name: '',
+            title: '',
+            number: '',
+        })
     }
+    const [items, setItems] = useState([
+        {
+            id: 1,
+            name: 'Kuss',
+            title: 'Self-con',
+            number: '08045612378'
+        }
+    ])
+    const [input, setInput] = useState('')
+
+    const inputChange = (e) => setInput((val) => ({
+        ...val,
+        [e.target.name]: e.target.value,
+    }))
 
     return (
-        <div className="form-container">
-            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+        <div>
+            <form className="form-container register-form" onSubmit={(e) => handleSubmit(e, items, setItems, input, setInput)}>
                 <input
                     className="form-field"
-                    type="text"
                     placeholder="Name"
                     name="name"
-                    ref={register}
+                    value={input.name}
+                    onChange={inputChange}
                 />
                 <input
                     className="form-field"
                     type="text"
-                    placeholder="Item Required"
+                    placeholder="Item"
                     name="title"
-                    ref={register}
+                    value={input.title}
+                    onChange={inputChange}
                 />
                 <input
                     class="form-field"
                     type="number"
                     placeholder="Phone Number"
                     name="number"
-                    ref={register({ required: "Phone number is required", minLength: { value: 11, message: "Please input a valid phone number" } })}
+                    value={input.number}
+                    onChange={inputChange}
                 />
-                {errors.number && <span>{errors.number.message}</span>}
+
                 <button class="form-field" type="submit">
                     Submit
                 </button>
             </form>
+            {items.map(item => (
+                <Forms name={item.name} title={item.title} number={item.number} />
+            ))}
         </div>
     )
 }

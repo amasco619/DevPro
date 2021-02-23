@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTransition, animated } from 'react-spring'
-import Request from './Request'
+import Login from './Login'
 
 function ReqPage() {
     const [req, setReq] = useState(false)
@@ -40,8 +40,8 @@ function ReqPage() {
                     item &&
                     <animated.div
                         key={key} style={props}
-                        className="fixed bg-white top-0 left-0 w-10/12 h-full z-50 shadow p-3">
-                        <Request closeMenu={() => setReq(false)} />
+                        className="fixed bg-white top-0 right-0 w-full h-full z-50 shadow p-3">
+                        <Login closeMenu={() => setReq(false)} />
                     </animated.div>
                 )
             }

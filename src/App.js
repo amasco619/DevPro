@@ -6,9 +6,10 @@ import {
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Home from './Views/Home';
-import About from './Views/About';
 import Items from './Views/Items';
+import Login from './Views/Login';
 import Request from './Views/Request';
+import About from './Views/About';
 
 function App() {
   return (
@@ -28,12 +29,16 @@ function App() {
               <About />
             </Route>
 
+            <Route path="/request">
+              <Request />
+            </Route>
+
             <Route path="/items/:id">
               <Items />
             </Route>
 
-            <Route path="/request">
-              <Request />
+            <Route path="/login">
+              <Login />
             </Route>
           </Switch>
         </div>

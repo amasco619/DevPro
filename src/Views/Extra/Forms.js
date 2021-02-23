@@ -1,71 +1,78 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+function Forms(props) {
+    return (
+        <div className="mt-7">
+            <p>My name is {props.name} and I want {props.title}. Call me at {props.number}</p>
+        </div>
+    )
+}
+
+export default Forms
+
+
+/*import React, { useState } from 'react'
+import About from '../About';
 
 function Forms() {
     const [value, setValue] = useState({
-        name: '',
-        title: '',
-        number: ''
+        id: 1,
+        name: 'Kuus',
     })
-    const [submitted, setSubmitted] = useState(false)
-    const [valid, setValid] = useState(false)
 
-    const inputChange = (event) => {
+    /* const inputChange = (event) => {
         setValue((value) => ({
             ...value,
             [event.target.name]: event.target.value,
         }));
-    };
+    }; */
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (value.name && value.title && value.number) {
-            setValid(true)
-        }
-        setSubmitted(true)
-        setValue({
-            name: ' ',
-            title: ' ',
-            number: ' '
-        })
-    }
+/*  const handleSubmit = (e, value, setValue) => {
+      e.preventDefault();
 
-    return (
-        <div className="form-container">
-            <form className="register-form" onSubmit={handleSubmit}>
-                {/*Below shorthand IF statement checking if submitted is true*/}
-                {submitted && valid ? <div className='success-message'>Success! Your request has been submitted.</div> : null}
-                <input
+      setValue([...value, {
+          id: 10,
+          name: 'Piero',
+      }])
+  }
+
+  return (
+      <div className="form-container">
+          <form className="register-form" onSubmit={(e) => handleSubmit(e, value, setValue)}>
+              {/*Below shorthand IF statement checking if submitted is true*/
+/*              <input
                     className="form-field"
                     placeholder="Name"
                     name="name"
                     value={value.name}
                     onChange={inputChange}
                 />
-                {submitted && !value.name ? <span>Please enter your name</span> : null}
                 <input
                     className="form-field"
                     type="text"
-                    placeholder="Item Required"
+                    placeholder="Item"
                     name="title"
                     value={value.title}
                     onChange={inputChange}
                 />
-                {submitted && !value.title ? <span>Please enter name of the Item</span> : null}
+
                 <input
                     class="form-field"
                     type="number"
-                    placeholder="Phone Number"
+                    placeholder="Number"
                     name="number"
                     value={value.number}
                     onChange={inputChange}
-                />
-                {submitted && !value.number ? <span>Please enter your phone number</span> : null}
-                <button class="form-field" type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
-    )
+              /> */
+
+/*    <button class="form-field" type="submit">
+          Submit
+      </button>
+  </form>
+  {value.map(val =>
+      <About name={val.name} id={val.id} />)}
+</div>
+)
 }
 
-export default Forms
+export default Forms */
