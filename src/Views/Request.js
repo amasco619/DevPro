@@ -66,9 +66,11 @@ function Request() {
                     Submit
                 </button>
             </form>
-            {items.map(item => (
-                <Forms id={item.id} name={item.name} title={item.title} number={item.number} deleteItem={(id) => deleteItem(id, items, setItems)} />
-            ))}
+            <div className="mt-14">
+                {items.map(item => (
+                    <Forms id={item.id} name={item.name} title={item.title} number={item.number} deleteItem={(id) => deleteItem(id, items, setItems)} />
+                ))}
+            </div>
         </div>
     )
 }

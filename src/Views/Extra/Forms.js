@@ -2,9 +2,9 @@ import React from 'react'
 
 function Forms(props) {
     return (
-        <div className="mt-7 form-container">
+        <div className="form-container rounded">
             <p>My name is {props.name} and I want {props.title}. Call me at {props.number}</p>
-            <div>
+            <div className="justify-center flex">
                 <button onClick={() => props.deleteItem(props.id)}>Delete</button>
             </div>
         </div>

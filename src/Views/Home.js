@@ -32,7 +32,7 @@ the singular name for the Data being looped through and Key(Index of the item)*/
                     return item
                 }
             }).map((item) =>
-                <div key={item.id}>
+                <div key={item.id} className="justify-center flex">
                     <ItemCard product={item} />
                 </div>
             )
